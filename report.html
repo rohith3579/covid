@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Report</title>
+    <!-- Add your Firebase SDK CDN here -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.6/firebase-firestore.js"></script>
+  </head>
+  <body>
+    <h1>Registration Report</h1>
+
+    <div id="reportContainer"></div>
+
+    <script>
+      // Your Firebase configuration
+      const firebaseConfig = {
+  apiKey: "AIzaSyDKPQBjeCDeAnIRJ5rx2EcXnCYX9i6xEzg",
+  authDomain: "auth-form-fae4c.firebaseapp.com",
+  projectId: "auth-form-fae4c",
+  storageBucket: "auth-form-fae4c.appspot.com",
+  messagingSenderId: "746299539163",
+  appId: "1:746299539163:web:0e3d9508be3ca222a7d6fe",
+  measurementId: "G-RFDRDBKMWV"
+};
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+
+      // Fetch registration details from Firebase
+      db.collection("registrations")
+        .get()
+        .then((querySnapshot) => {
+          const reportContainer = document.getElementById("reportContainer");
+
+          querySnapshot.forEach((doc) => {
+            const data = doc.data();
+
+            // Create a card to display registration details
+            const card = document.createElement("div");
+            card.classList.add("card");
+
+            // Create card body
+            const cardBody = document.createElement("div");
+            cardBody.classList.add("card-body");
+
+            // Create name element
+            const name = document.createElement("h5");
+            name.textContent = "Name: " + data.name;
+
+            // Create city element
+            const city = document.createElement("p");
+            city.textContent = "City: " + data.city;
+
+            // Create other elements for remaining registration details
+
+            // Append elements to card body
+            cardBody.appendChild(name);
+            cardBody.appendChild(city);
+
+            // Append card body to card
+            card.appendChild(cardBody);
+
+            // Append card to report container
+            reportContainer.appendChild(card);
+          });
+        })
+        .catch((error) => {
+          console.log("Error getting registration details: ", error);
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="login.css">
+  <style>
+    body {
+      background-color: #f1f1f1;
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .wrapper {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+    
+    label {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 14px;
+    }
+    
+    input[type="submit"] {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    
+    .signup-link {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    
+    .signup-link a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    
+      
+      
+   
+    <div class="wrapper">
+      <div class="title">Admin Login Form</div>
+      <form id="adminForm">
+        <div class="field">
+          <input type="text" id="adminEmail" required>
+          <label>Email Address or User Id</label>
+        </div>
+        <div class="field">
+          <input type="password" id="adminPassword" required>
+          <label>Password</label>
+        </div>
+        <div class="field">
+          <input type="submit" name="adminSubmit" value="Login">
+        </div>
+        <div class="signup-link">This is Admin Page</div> 
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript code here...
+  </script>
+</body>
+</html>
